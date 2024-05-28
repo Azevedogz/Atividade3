@@ -1,0 +1,250 @@
+$azul-escuro: #003366;
+$azul-medio: #336699;
+$azul-claro: #99CCFF;
+$cinza-escuro: #4D4D4D;
+$cinza-medio: #B3B3B3;
+$cinza-claro: #E0E0E0;
+$branco: #FFFFFF;
+
+$font-principal: 'Roboto', sans-serif;
+$padding-padrao: 60px;
+$padding-menor: 4px;
+$padding-medio: 8px;
+$padding-grande: 40px;
+
+$flex: display: flex;
+$center: justify-content: center; align-items: center;
+$column: flex-direction: column;
+$full-width: width: 100%;
+$transition-padrao: transition: all 0.2s;
+
+body {
+  font-family: $font-principal;
+}
+
+.hero {
+  height: 100vh;
+  #{$flex};
+  #{$column};
+}
+
+.div-up {
+  background-color: $azul-claro;
+  #{$flex};
+  padding-block: $padding-menor;
+  color: $branco;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+nav {
+  #{$flex};
+  justify-content: space-around;
+  text-align: center;
+  background-color: $azul-escuro;
+  padding-block: $padding-medio;
+}
+
+nav a {
+  text-decoration: none;
+  color: $branco;
+  font-size: 26px;
+}
+
+nav ul {
+  padding-top: 2%;
+  #{$flex};
+  justify-content: space-between;
+  list-style: none;
+  width: 50%;
+  color: $branco;
+}
+
+nav img {
+  width: 18%;
+  justify-content: left;
+}
+
+.menu-btn {
+  display: none;
+}
+
+.img-coca {
+  object-fit: contain;
+  #{$full-width};
+  height: 100%;
+}
+
+.cima {
+  padding-top: 32px;
+  #{$full-width};
+  #{$flex};
+  height: calc(100vh - 87.33px - 27.21px);
+}
+
+.meio {
+  #{$flex};
+  padding-block: $padding-padrao;
+  width: 1160px;
+  margin-inline: auto;
+  gap: $padding-grande;
+  justify-content: space-around;
+}
+
+.meio-text {
+  #{$flex};
+  #{$column};
+  justify-content: center;
+  gap: 16px;
+  width: 50%;
+}
+
+.meio h1 {
+  color: $azul-escuro;
+}
+
+.meio .h1-diferente {
+  color: $azul-claro;
+}
+
+.meio img {
+  width: 140px;
+  object-fit: contain;
+}
+
+.meio p {
+  color: $cinza-escuro;
+}
+
+.meio button {
+  color: $branco;
+  width: fit-content;
+  padding-inline: $padding-grande;
+  height: 40px;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: $azul-escuro;
+
+  &:hover {
+    background-color: $azul-claro;
+    #{$transition-padrao};
+  }
+}
+
+.baixo {
+  margin-inline: auto;
+  gap: $padding-grande;
+  padding-block: $padding-padrao;
+  #{$flex};
+  #{$center};
+}
+
+.coca-light {
+  #{$center};
+  text-align: center;
+
+  img {
+    width: 10%;
+  }
+
+  p {
+    color: black;
+    #{$center};
+    text-align: center;
+  }
+
+  .comprar {
+    color: black;
+    background-color: $branco;
+    font-size: large;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+      #{$transition-padrao};
+    }
+  }
+}
+
+@media (max-width: 1160px) {
+  .meio {
+    width: 1024px;
+    max-width: 1024px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cima {
+    height: calc(100vh - 75.19px - 81.66px);
+  }
+
+  .meio {
+    #{$column};
+    width: 90vw;
+    #{$center};
+  }
+
+  .meio-text {
+    text-align: center;
+    #{$center};
+    width: auto;
+  }
+
+  .meio h1 {
+    #{$flex};
+    gap: 8px;
+  }
+
+  .baixo {
+    #{$column};
+    width: 90vw;
+    #{$center};
+  }
+
+  .menu-btn {
+    display: grid;
+    place-items: center;
+    border-radius: 100%;
+    padding: $padding-menor;
+    background-color: red;
+    cursor: pointer;
+
+    img {
+      width: 24px;
+    }
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  .contato {
+    #{$column};
+    gap: 8px;
+  }
+}
+
+@media (max-width: 680px) {
+  .img-coca {
+    width: 70%;
+    margin: auto;
+    height: auto;
+  }
+
+  .meio {
+    width: 100%;
+  }
+
+  .baixo {
+    width: 100%;
+  }
+
+  .meio img {
+    width: 30%;
+  }
+
+  nav img {
+    object-fit: contain;
+    width: 90px;
+  }
+}
